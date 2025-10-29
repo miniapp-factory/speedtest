@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 const SPEED_TEST_URL =
-  "https://speed.hetzner.de/100MB.bin"; // 100 MB test file
+  "https://speed.cloudflare.com/__down?size=100MB"; // 100 MB test file with a valid cert
 
 function getEmoji(speedMbps: number) {
   if (speedMbps > 100) return "🚀";
@@ -29,7 +30,7 @@ export function SpeedMeasure() {
         await response.blob(); // consume the data
         const end = performance.now();
         const duration = (end - start) / 1000; // seconds
-        const bytes = 100 * 1024 * 1024; // 100 MB
+        const bytes = 100 * 1024 * 1024; // 100 MB
         const bits = bytes * 8;
         const speedMbps = bits / (duration * 1e6);
         setSpeed(speedMbps);
