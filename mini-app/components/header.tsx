@@ -30,6 +30,14 @@ const pages = [
     ),
     href: "/",
   },
+  {
+    label: (
+      <div className="flex place-items-center gap-2">
+        <span>⚡ Speed Test</span>
+      </div>
+    ),
+    href: "/speed",
+  },
 ];
 
 export function Header() {
