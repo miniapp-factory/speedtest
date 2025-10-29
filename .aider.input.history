@@ -16,3 +16,9 @@
 
 # 2025-10-29 11:07:59.116171
 +there is a build error
+
+# 2025-10-29 11:15:20.951082
++GET https://speed.hetzner.de/100MB.bin net::ERR_CERT_DATE_INVALID
+
+# 2025-10-29 11:15:20.951574
++GET https://speed.hetzner.de/100MB.bin net::ERR_CERT_DATE_INVALID
