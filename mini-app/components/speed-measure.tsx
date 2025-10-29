@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
 
 const SPEED_TEST_URL =
   "https://speed.hetzner.de/100MB.bin"; // 100 MB test file
@@ -34,8 +33,10 @@ export function SpeedMeasure() {
         const bits = bytes * 8;
         const speedMbps = bits / (duration * 1e6);
         setSpeed(speedMbps);
-      } catch (e: any) {
-        setError(e.message ?? "Unknown error");
+      } catch (e: unknown) {
+        const message =
+          e instanceof Error ? e.message : "Unknown error";
+        setError(message);
       } finally {
         setLoading(false);
       }
